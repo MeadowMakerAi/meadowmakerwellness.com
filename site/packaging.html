@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Packaging — Meadow Maker</title>
+<meta name="description" content="Meadow Maker packaging and label system.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Packaging — Meadow Maker">
+<meta property="og:description" content="Meadow Maker packaging and label system.">
+<meta property="og:image" content="https://meadowmakerwellness.com/assets/box-render.png">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="design_doc_mode" content="canvas">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background: #C3B39C; }
+    a { color: #232820; } a:hover { color: #8A6F3A; }
+  </style>
+</helmet>
+<div style="min-height: 100vh; background: #C3B39C; font-family: 'Archivo', sans-serif; color: #232820; padding: 64px 72px 96px 72px; display: flex; flex-direction: column; align-items: flex-start; gap: 56px">
+
+  <header style="display: flex; flex-direction: column; gap: 10px; width: 1050px">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; width: 100%">
+      <div style="font-size: 15px; letter-spacing: 0.32em; font-weight: 600">MEADOW MAKER</div>
+      <nav style="display: flex; gap: 24px; font-size: 11px; letter-spacing: 0.18em">
+        <a href="/brand" style="text-decoration: none; border-bottom: 1px solid rgba(35,40,32,0.4); padding-bottom: 2px">BRAND SYSTEM</a>
+        <a href="/" style="text-decoration: none; border-bottom: 1px solid rgba(35,40,32,0.4); padding-bottom: 2px">LANDING PAGE</a>
+      </nav>
+    </div>
+    <div style="font-size: 11px; letter-spacing: 0.18em; opacity: 0.75">PACKAGING LINE-UP — FIVE MOODS · FRONT PANEL 7 × 3.5 IN · SPINE 7 × 0.64 IN</div>
+    <div style="border-top: 1px solid rgba(35,40,32,0.45); width: 100%"></div>
+  </header>
+
+  <sc-for list="{{ moods }}" as="mood" hint-placeholder-count="5">
+    <article style="display: flex; flex-direction: column; gap: 14px">
+
+      <sc-if value="{{ showCaptions }}" hint-placeholder-val="{{ true }}">
+        <div style="display: flex; align-items: baseline; gap: 14px; font-size: 11px; letter-spacing: 0.2em">
+          <span style="font-weight: 600; color: {{ mood.accent }}">{{ mood.index }} — {{ mood.name }}</span>
+          <span style="opacity: 0.75">{{ mood.strain }} · {{ mood.type }}</span>
+        </div>
+      </sc-if>
+
+      <div style="width: 1050px; height: 525px; background: #F2EDE2; display: flex; box-shadow: 0 3px 10px rgba(40,32,20,0.25); flex: none">
+        <div style="flex: none; width: 470px; margin: 28px 0 28px 28px; overflow: hidden; background: #DAD2C2">
+          <img src="assets/meadow-photo.png" alt="{{ mood.name }} landscape" style="width: 100%; height: 100%; object-fit: cover; display: block">
+        </div>
+        <div style="flex: 1; padding: 40px 44px 30px 44px; display: flex; flex-direction: column; min-width: 0">
+          <div style="font-size: 40px; font-weight: 500; letter-spacing: 0.3em; line-height: 1.18">MEADOW<br>MAKER</div>
+          <div style="border-top: 1px solid rgba(35,40,32,0.5); margin: 22px 0 20px 0"></div>
+          <div style="font-size: 16px; letter-spacing: 0.22em; line-height: 1.75; font-weight: 500">GOOD WEED<br>FOR REGULAR DAYS.</div>
+          <div style="border-top: 1px solid rgba(35,40,32,0.5); margin: 20px 0 20px 0"></div>
+          <div style="display: flex; flex-direction: column; gap: 7px">
+            <div style="font-size: 24px; font-weight: 600; letter-spacing: 0.32em; color: {{ mood.accent }}">{{ mood.name }}</div>
+            <div style="font-size: 14px; letter-spacing: 0.2em; font-weight: 500">{{ mood.tag }}</div>
+          </div>
+          <div style="border-top: 1px solid rgba(35,40,32,0.5); margin: 20px 0 0 0"></div>
+          <div style="display: flex; align-items: center; gap: 0; padding: 16px 0 0 0">
+            <div style="display: flex; flex-direction: column; gap: 6px; padding-right: 22px; font-size: 12px; letter-spacing: 0.16em; font-weight: 500">
+              <span>{{ mood.strain }}</span>
+              <span>{{ mood.type }}</span>
+            </div>
+            <div style="border-left: 1px solid rgba(35,40,32,0.5); align-self: stretch"></div>
+            <div style="display: flex; flex-direction: column; gap: 6px; padding: 0 22px; font-size: 12px; letter-spacing: 0.16em; font-weight: 500">
+              <span>3.5G FLOWER</span>
+              <span>GROWN IN<br>NEW YORK</span>
+            </div>
+            <div style="border-left: 1px solid rgba(35,40,32,0.5); align-self: stretch"></div>
+            <div style="margin-left: 22px; width: 62px; height: 62px; border: 1.5px solid #232820; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; font-size: 12px; letter-spacing: 0.14em; font-weight: 500; flex: none">
+              <span>NY</span><span>CA</span>
+            </div>
+          </div>
+          <div style="flex: 1"></div>
+          <div style="font-size: 13px; letter-spacing: 0.18em; text-align: right; font-weight: 500">NET WT. 3.5G (0.123oz)</div>
+        </div>
+      </div>
+
+      <sc-if value="{{ showSpines }}" hint-placeholder-val="{{ true }}">
+        <div style="width: 1050px; height: 96px; background: #F2EDE2; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(40,32,20,0.22); flex: none">
+          <div style="width: 12px; align-self: stretch; background: {{ mood.accent }}; flex: none"></div>
+          <div style="display: flex; align-items: center; gap: 28px; padding: 0 36px; flex: 1; min-width: 0">
+            <span style="font-size: 16px; letter-spacing: 0.3em; font-weight: 500; white-space: nowrap">MEADOW MAKER</span>
+            <span style="border-left: 1px solid rgba(35,40,32,0.5); height: 34px"></span>
+            <span style="font-size: 14px; letter-spacing: 0.28em; font-weight: 600; color: {{ mood.accent }}; white-space: nowrap">{{ mood.name }}</span>
+            <span style="border-left: 1px solid rgba(35,40,32,0.5); height: 34px"></span>
+            <span style="font-size: 12px; letter-spacing: 0.16em; font-weight: 500; white-space: nowrap">{{ mood.strain }} · {{ mood.type }}</span>
+            <span style="flex: 1"></span>
+            <span style="font-size: 12px; letter-spacing: 0.16em; font-weight: 500; white-space: nowrap">3.5G FLOWER · NET WT. 3.5G (0.123oz)</span>
+          </div>
+        </div>
+      </sc-if>
+
+    </article>
+  </sc-for>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showSpines&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Sheet&quot;}, &quot;showCaptions&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Sheet&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const moods = [
+      { index: '01', name: 'BRIGHT', tag: 'FOR A LITTLE SPARK.', strain: 'LEMON SKUNK', type: 'SATIVA HYBRID', accent: '#C2922E' },
+      { index: '02', name: 'STEADY', tag: 'FOR THE EVERYDAY.', strain: 'BLUE DREAM', type: 'BALANCED HYBRID', accent: '#BC6B45' },
+      { index: '03', name: 'MELLOW', tag: 'FOR SLOWING DOWN.', strain: 'WEDDING CAKE', type: 'INDICA HYBRID', accent: '#7E8F4E' },
+      { index: '04', name: 'DRIFT', tag: 'FOR WANDERING OFF.', strain: 'PURPLE HAZE', type: 'SATIVA', accent: '#5F82A0' },
+      { index: '05', name: 'DEEP', tag: 'FOR LIGHTS OUT.', strain: 'NORTHERN LIGHTS', type: 'INDICA', accent: '#8F6788' },
+    ];
+    return {
+      moods,
+      showCaptions: this.props.showCaptions ?? true,
+      showSpines: this.props.showSpines ?? true,
+    };
+  }
+}
+</script>
+</body>
+</html>
