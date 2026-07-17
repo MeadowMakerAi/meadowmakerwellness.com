@@ -71,7 +71,7 @@
         }
         .logo {
             display: flex; align-items: center; gap: 0.7rem;
-            text-decoration: none; color: var(--ink);
+            color: var(--ink);
         }
         .logo svg { width: 19px; height: 23px; color: var(--olive); }
         .logo span {
@@ -502,10 +502,10 @@
     </svg>
 
     <nav id="navbar">
-        <a href="#" class="logo">
+        <div class="logo">
             <svg><use href="#leaf"/></svg>
             <span>Meadow Maker</span>
-        </a>
+        </div>
         <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
             <span></span><span></span><span></span>
         </button>
